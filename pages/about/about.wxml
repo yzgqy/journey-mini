@@ -1,2 +1,27 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view class="personalWrap">
+    <view class="personalMe" >
+          <view class="personalImage">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" ></image>
+          </view>
+          <view class="personalInfo">
+              <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          </view>
+    </view>
+    <!-- 列表 -->
+    <!-- <view class="personalList">
+        <view class="iconfont icon-person"  bindtap="infoList">个人信息</view>
+        <view class="iconfont icon-history" bindtap="historyList" >游玩记录</view>
+        <view class="iconfont icon-share" 
+        bindtap="shareList">游玩分享</view>
+    </view> -->
+    <view class="personalList">
+     <block wx:for="{{options_key}}" wx:for-item="item">
+      <view class="iconfont" bindtap='{{item.taptype}}'>
+        <text class="user-motto">{{item.motto}}</text>
+      </view>
+     </block>
+    </view>
+</view>
+<!-- <import src="../../template/template.wxml"/>
+<template is="qrcode" /> -->

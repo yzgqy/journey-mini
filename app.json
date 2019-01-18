@@ -1,8 +1,12 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs",
     "pages/about/about",
+    "pages/about/info/info",
+    "pages/about/history/history",
+    "pages/about/share/share",
     "pages/publish/publish"
   ],
   "window": {
