@@ -4,9 +4,11 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/about/about",
-    "pages/about/info/info",
     "pages/about/history/history",
+    "pages/about/info/info",
+    "pages/about/info/update/update",
     "pages/about/share/share",
+    "pages/journey/journey-detail/journey-detail",
     "pages/publish/publish"
   ],
   "window": {
