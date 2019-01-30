@@ -1,1 +1,52 @@
-<text>info</text>
+<view class="form-here">
+    <view class="info-wrap">
+      <text class="label">姓名：{{name}}</text>
+    </view>
+    <view class="hr"></view>
+</view>
+
+<view class="form-here">
+    <view class="info-wrap">
+      <text class="label">描述：{{desc}}</text>
+    </view>
+    <view class="hr"></view>
+</view>
+
+<view class="form-here">
+    <view class="info-wrap">
+      <text class="label">生日：{{birthday}}</text>
+    </view>
+    <view class="hr"></view>
+</view>
+
+<view class="form-here">
+    <view class="info-wrap">
+      <text class="label">性别：{{gender}}</text>
+    </view>
+    <view class="hr"></view>
+</view>
+
+<view class="form-here">
+    <view class="info-wrap">
+      <text class="label">手机号码：{{phone}}</text>
+    </view>
+    <view class="hr"></view>
+</view>
+
+<view class="form-here">
+    <view class="info-wrap">
+      <text class="label">城市：{{city}}</text>
+    </view>
+    <view class="hr"></view>
+</view>
+
+<view class="form-here">
+    <view class="info-wrap">
+      <text class="label">学校：{{school}}</text>
+    </view>
+    <view class="hr"></view>
+</view>
+
+<view class="submit">
+  <view class="sub-button" bindtap="update">修改信息</view>
+</view>

@@ -15,7 +15,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,8 +43,7 @@ Page({
       })
     }
 
-    var options = [
-      {
+    var options = [{
         motto: '个人信息',
         taptype: 'infoList',
       },
@@ -63,7 +62,7 @@ Page({
     });
   },
 
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -71,68 +70,20 @@ Page({
       hasUserInfo: true
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-    infoList: function (event) {
+  infoList: function(event) {
     wx.navigateTo({
       url: './info/info',
     })
   },
 
-  historyList: function (event) {
+  historyList: function(event) {
     wx.navigateTo({
       url: './history/history',
     })
   },
 
-  shareList: function (event) {
+  shareList: function(event) {
     wx.navigateTo({
       url: './share/share',
     })

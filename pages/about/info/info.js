@@ -4,6 +4,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name:"王博",
+    birthday: "1995.04.27",
+    gender: "男",
+    desc: "null",
+    phone: "18851750813",
+    city: "江苏南京",
+    school: "南京大学",
+    createAt: "2019.01.28",
+    updateAt: "2019.01.28"
     
   },
 
@@ -14,52 +23,9 @@ Page({
     
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+  update: function (event) {
+    wx.redirectTo({
+      url: './update/update',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  }
 })

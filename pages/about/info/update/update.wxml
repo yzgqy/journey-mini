@@ -1,0 +1,44 @@
+<view class="form-here">
+    <!-- <view class="form-account"> -->
+        <view class="info-wrap" style="margin-top:0">
+          <text class="label">姓名:</text>
+          <input class="form-account" type="text" placeholder='请输入姓名' value="{{name}}" bindblur='userNameInput' />
+        </view>
+        <view class="hr" style="margin-top:5px;"></view>
+        <view class="info-wrap" style="margin-bottom:20px">
+          <text class="label">性别:</text>
+                <radio-group  class="radio-group" bindchange="radioChange">
+                  <label class="radio" wx:for="{{items}}">
+                    <radio  name="adtype" value="{{item.id}}" checked="{{item.checked}}" />{{item.value}}
+                  </label>
+                </radio-group>       
+        </view>
+        <view class="info-wrap">
+          <text class="label">描述:</text>
+          <input class="form-account" type="text" placeholder='请输入描述' value="{{desc}}" bindblur='userDescInput' />
+        </view>
+        <view class="hr" style="margin-top:5px;"></view>
+        <view class="info-wrap">
+          <text class="label">生日:</text>
+          <input class="form-account" type="text" placeholder='请输入生日（1995.04.27）' value="{{birthday}}" bindblur='userBirthdayInput' />
+        </view>
+        <view class="hr" style="margin-top:5px;"></view>
+        <view class="info-wrap">
+          <text class="label">城市:</text>
+          <input class="form-account" type="text" placeholder='请输入所在城市' value="{{city}}" bindblur='userCityInput' />
+        </view>
+        <view class="hr" style="margin-top:5px;"></view>
+        <view class="info-wrap">
+          <text class="label">学校:</text>
+          <input class="form-account" type="text" placeholder='请输入学校名称' value="{{school}}" bindblur='userSchoolInput' />
+        </view>
+        <view class="hr" style="margin-top:5px;"></view>
+        <view class="info-wrap">
+          <text class="label">手机号码:</text>
+          <input class="form-account" type="text" placeholder='请输入手机号码' value="{{phone}}" bindblur='userTellInput' />
+        </view>
+        <view class="hr" style="margin-top:5px;"></view>
+</view>
+<view class="submit">
+    <button class="sub-button" bindtap='submit'>保存</button>
+</view>
