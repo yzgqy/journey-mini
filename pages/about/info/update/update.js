@@ -75,7 +75,7 @@ Page({
     var gender = this.data.items[this.data.genderSelect].value;
     console.log(gender)
 
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../info',
     })
   }

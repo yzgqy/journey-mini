@@ -24,7 +24,7 @@ Page({
   },
 
   update: function (event) {
-    wx.redirectTo({
+    wx.navigateTo({
       url: './update/update',
     })
   },

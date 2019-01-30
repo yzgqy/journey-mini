@@ -51,10 +51,10 @@ Page({
         motto: '游玩记录',
         taptype: 'historyList',
       },
-      {
-        motto: '游玩分享',
-        taptype: 'shareList',
-      }
+      // {
+      //   motto: '游玩分享',
+      //   taptype: 'shareList',
+      // }
     ]
 
     this.setData({
