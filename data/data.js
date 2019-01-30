@@ -11,9 +11,10 @@ var journey_database = [
     createdAt: "2019.01.30",
     updateAt: "2019.01.30",
     flag: 0,
-    code: "yaoqingma",
+    code: "yaoqingma0",
     isPublic:1,
-    isFind:1
+    isFind:1,
+    isFinished:true
   },
   {
     journeyId: 1,
@@ -27,9 +28,10 @@ var journey_database = [
     createdAt: "2019.01.30",
     updateAt: "2019.01.30",
     flag: 0,
-    code: "yaoqingma",
+    code: "yaoqingma1",
     isPublic: 1,
-    isFind: 1
+    isFind: 1,
+    isFinished: false
   },
   {
     journeyId: 2,
@@ -43,9 +45,10 @@ var journey_database = [
     createdAt: "2019.01.30",
     updateAt: "2019.01.30",
     flag: 0,
-    code: "yaoqingma",
+    code: "yaoqingma2",
     isPublic: 1,
-    isFind: 1
+    isFind: 1,
+    isFinished: true
   },
   {
     journeyId: 3,
@@ -59,9 +62,27 @@ var journey_database = [
     createdAt: "2019.01.30",
     updateAt: "2019.01.30",
     flag: 0,
-    code: "yaoqingma",
+    code: "yaoqingma3",
     isPublic: 1,
-    isFind: 1
+    isFind: 1,
+    isFinished: false
+  },
+  {
+    journeyId: 4,
+    theme: "博物院",
+    desc: "去博物院玩啊",
+    startTime: "2019。01.30",
+    endTime: "2019.01.30",
+    assemblyPoint: "南京大学",
+    sponsorId: 1,
+    money: 20,
+    createdAt: "2019.01.30",
+    updateAt: "2019.01.30",
+    flag: 0,
+    code: "yaoqingma4",
+    isPublic: 1,
+    isFind: 1,
+    isFinished: true
   },
 ]
 
