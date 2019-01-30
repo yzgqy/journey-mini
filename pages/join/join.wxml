@@ -1,2 +1,9 @@
 <!--pages/join/join.wxml-->
-<text>pages/join/join.wxml</text>
+<import src="../journey/journey-template/journey-template.wxml" />
+<view>
+    <block wx:for="{{journeyList}}" wx:for-item="item" wx:for-index="idx">
+        <view wx:if="{{item.isFinished}}" catchtap="onPostTap" data-journeyId="{{item.journeyId}}">
+             <template is="journeyItem" data="{{...item}}" />
+        </view>
+</block>
+</view>

@@ -22,13 +22,15 @@
   </view>
   <view class="hr" style="margin-top:5px;"></view>
 
-    <view class="section" style="margin-top:20px">
-      <form class="form-style" bindsubmit="bindFormSubmit">
-        <textarea class="textarea-style" placeholder="请添加描述" name="desc" minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
-          <text class="hint">{{texts}}</text>
-        </textarea>
-      </form>
-    </view>
+  <!-- <view class="hd" style="margin-top:5px;"></view> -->
+  <view class="section" style="margin-top:30px">
+    <form class="form-style" bindsubmit="bindFormSubmit">
+      <textarea class="textarea-style" placeholder="请添加描述" name="desc" minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+        <text class="hint">{{texts}}</text>
+      </textarea>
+    </form>
+  </view>
+  <view class="hd" style="margin-top:5px;"></view>
 
 </view>
 
