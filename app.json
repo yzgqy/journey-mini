@@ -1,5 +1,6 @@
 {
   "pages": [
+  
     "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs",
@@ -9,7 +10,11 @@
     "pages/about/info/update/update",
     "pages/about/share/share",
     "pages/journey/journey-detail/journey-detail",
-    "pages/publish/publish"
+
+    "pages/join/join",
+    "pages/join/publish/publish"
+  
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,7 +29,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/publish/publish",
+        "pagePath": "pages/join/publish/publish",
         "text": "发布"
       },
       {

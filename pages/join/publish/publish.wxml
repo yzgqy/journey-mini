@@ -1,0 +1,37 @@
+<!--pages/publish/publish.wxml-->
+
+<view class="form-here">
+  <view class="info-wrap" style="margin-top:0">
+    <text class="label">主题:</text>
+    <input class="form-account" type="text" placeholder='请输入主题' value="{{theme}}" bindblur='userNameInput' />
+  </view>
+  <view class="hr" style="margin-top:5px;"></view>
+  <view class="info-wrap">
+    <text class="label">预算:</text>
+    <input class="form-account" type="text" placeholder='请输入预算' value="{{money}}" bindblur='userNameInput' />
+  </view>
+  <view class="hr" style="margin-top:5px;"></view>
+  <view class="info-wrap">
+    <text class="label">结束时间:</text>
+    <input class="form-account" type="text" placeholder='请输入结束时间（2019.05.27）' value="{{endTime}}" bindblur='userDescInput' />
+  </view>
+  <view class="hr" style="margin-top:5px;"></view>
+  <view class="info-wrap">
+    <text class="label">集合地点:</text>
+    <input class="form-account" type="text" placeholder='请输入集合地点' value="{{assemblyPoint}}" bindblur='userBirthdayInput' />
+  </view>
+  <view class="hr" style="margin-top:5px;"></view>
+
+    <view class="section" style="margin-top:20px">
+      <form class="form-style" bindsubmit="bindFormSubmit">
+        <textarea class="textarea-style" placeholder="请添加描述" name="desc" minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+          <text class="hint">{{texts}}</text>
+        </textarea>
+      </form>
+    </view>
+
+</view>
+
+<view class="submit">
+  <button class="sub-button" bindtap='submit'>发布</button>
+</view>
