@@ -17,4 +17,10 @@ Page({
     })
   },
 
+  publish: function (event) {
+    wx.navigateTo({
+      url: './publish/publish',
+    })
+  },
+
 })

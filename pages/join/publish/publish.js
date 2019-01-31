@@ -52,9 +52,10 @@ Page({
     console.log(endTime)
     var assemblyPoint = this.data.assemblyPoint;
     console.log(assemblyPoint)
-    var school = this.data.school;
+    var desc = this.data.desc;
+    console.log(desc)
 
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../join',
     })
   }

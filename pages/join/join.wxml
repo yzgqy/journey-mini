@@ -2,8 +2,11 @@
 <import src="../journey/journey-template/journey-template.wxml" />
 <view>
     <block wx:for="{{journeyList}}" wx:for-item="item" wx:for-index="idx">
-        <view wx:if="{{item.isFinished}}" catchtap="onPostTap" data-journeyId="{{item.journeyId}}">
+        <view wx:if="{{item.isFinished === 0}}"  catchtap="onPostTap" data-journeyId="{{item.journeyId}}">
              <template is="journeyItem" data="{{...item}}" />
         </view>
 </block>
+</view>
+<view class="submit">
+  <view class="sub-button" bindtap="publish">发布</view>
 </view>

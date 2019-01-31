@@ -3,7 +3,7 @@ var journey_database = [
     journeyId: 0,
     theme: "鸡鸣寺",
     desc: "去鸡鸣寺玩啊",
-    startTime: "2019。01.30",
+    startTime: "2019.01.30",
     endTime: "2019.01.30",
     assemblyPoint: "南京大学",
     sponsorId: 1,
@@ -14,13 +14,13 @@ var journey_database = [
     code: "yaoqingma0",
     isPublic:1,
     isFind:1,
-    isFinished:true
+    isFinished:1
   },
   {
     journeyId: 1,
     theme: "中山陵",
     desc: "去中山陵玩啊",
-    startTime: "2019。01.30",
+    startTime: "2019.01.30",
     endTime: "2019.01.30",
     assemblyPoint: "南京大学",
     sponsorId: 1,
@@ -31,13 +31,13 @@ var journey_database = [
     code: "yaoqingma1",
     isPublic: 1,
     isFind: 1,
-    isFinished: false
+    isFinished: 0
   },
   {
     journeyId: 2,
     theme: "总统府",
     desc: "去总统府玩啊",
-    startTime: "2019。01.30",
+    startTime: "2019.01.30",
     endTime: "2019.01.30",
     assemblyPoint: "南京大学",
     sponsorId: 1,
@@ -48,13 +48,13 @@ var journey_database = [
     code: "yaoqingma2",
     isPublic: 1,
     isFind: 1,
-    isFinished: true
+    isFinished: 1
   },
   {
     journeyId: 3,
     theme: "玄武湖",
     desc: "去玄武湖玩啊",
-    startTime: "2019。01.30",
+    startTime: "2019.01.30",
     endTime: "2019.01.30",
     assemblyPoint: "南京大学",
     sponsorId: 1,
@@ -65,13 +65,13 @@ var journey_database = [
     code: "yaoqingma3",
     isPublic: 1,
     isFind: 1,
-    isFinished: false
+    isFinished: 0
   },
   {
     journeyId: 4,
     theme: "博物院",
     desc: "去博物院玩啊",
-    startTime: "2019。01.30",
+    startTime: "2019.01.30",
     endTime: "2019.01.30",
     assemblyPoint: "南京大学",
     sponsorId: 1,
@@ -82,23 +82,9 @@ var journey_database = [
     code: "yaoqingma4",
     isPublic: 1,
     isFind: 1,
-    isFinished: true
+    isFinished: 1
   },
 ]
-
-// var info_database = [
-//   {
-//     id:0,
-//     birthday:"1995.04.27",
-//     gender:"男",
-//     desc:"null",
-//     phone:"18851750813",
-//     city:"江苏南京",
-//     school:"南京大学",
-//     createAt:"2019.01.28",
-//     updateAt:"2019.01.28"
-//   },
-// ]
 
 module.exports = {
   journeyList: journey_database

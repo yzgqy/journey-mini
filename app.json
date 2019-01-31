@@ -1,6 +1,5 @@
 {
   "pages": [
-  
     "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs",
@@ -10,7 +9,6 @@
     "pages/about/info/update/update",
     "pages/about/share/share",
     "pages/journey/journey-detail/journey-detail",
-
     "pages/join/join",
     "pages/join/publish/publish"
   
@@ -26,11 +24,11 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "出游列表"
       },
       {
-        "pagePath": "pages/join/publish/publish",
-        "text": "发布"
+        "pagePath": "pages/join/join",
+        "text": "正在参与"
       },
       {
         "pagePath":"pages/about/about",

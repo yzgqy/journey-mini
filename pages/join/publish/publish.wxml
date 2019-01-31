@@ -3,30 +3,30 @@
 <view class="form-here">
   <view class="info-wrap" style="margin-top:0">
     <text class="label">主题:</text>
-    <input class="form-account" type="text" placeholder='请输入主题' value="{{theme}}" bindblur='userNameInput' />
+    <input class="form-account" type="text" placeholder='请输入主题' value="{{theme}}" bindblur='userThemeInput' />
   </view>
   <view class="hr" style="margin-top:5px;"></view>
   <view class="info-wrap">
     <text class="label">预算:</text>
-    <input class="form-account" type="text" placeholder='请输入预算' value="{{money}}" bindblur='userNameInput' />
+    <input class="form-account" type="text" placeholder='请输入预算' value="{{money}}" bindblur='userMoneyInput' />
   </view>
   <view class="hr" style="margin-top:5px;"></view>
   <view class="info-wrap">
     <text class="label">结束时间:</text>
-    <input class="form-account" type="text" placeholder='请输入结束时间（2019.05.27）' value="{{endTime}}" bindblur='userDescInput' />
+    <input class="form-account" type="text" placeholder='请输入结束时间（2019.05.27）' value="{{endTime}}" bindblur='userEndTimeInput' />
   </view>
   <view class="hr" style="margin-top:5px;"></view>
   <view class="info-wrap">
     <text class="label">集合地点:</text>
-    <input class="form-account" type="text" placeholder='请输入集合地点' value="{{assemblyPoint}}" bindblur='userBirthdayInput' />
+    <input class="form-account" type="text" placeholder='请输入集合地点' value="{{assemblyPoint}}" bindblur='userAssemblyPointInput' />
   </view>
   <view class="hr" style="margin-top:5px;"></view>
 
   <!-- <view class="hd" style="margin-top:5px;"></view> -->
   <view class="section" style="margin-top:30px">
     <form class="form-style" bindsubmit="bindFormSubmit">
-      <textarea class="textarea-style" placeholder="请添加描述" name="desc" minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
-        <text class="hint">{{texts}}</text>
+      <textarea class="textarea-style" placeholder="请添加描述" name="desc" minlength="{{min}}" maxlength="{{max}}" bindblur="userDescInput">
+        <text class="hint">{{desc}}</text>
       </textarea>
     </form>
   </view>
@@ -35,5 +35,5 @@
 </view>
 
 <view class="submit">
-  <button class="sub-button" bindtap='submit'>发布</button>
+  <button class="sub-button" bindtap='submit'>确认发布</button>
 </view>

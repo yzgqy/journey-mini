@@ -1,66 +1,93 @@
+var journeysData = require('../../../data/data.js')
+var app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    
-  },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (option) {
+  },
+  onLoad: function(option) {
     var journeyId = option.id;
-    console.log(journeyId);
+    this.data.currentJourneyId = journeyId;
+    var journeyData = journeysData.journeyList[journeyId];
+    this.setData({
+      journeyData: journeyData
+    })
+
+    var journeysJoined = wx.getStorageSync('journeys_joined')
+    if (journeysJoined) {
+      var journeyJoined = journeysJoined[journeyId]
+      this.setData({
+        joined: journeyJoined
+      })
+    } else {
+      var journeysJoined = {};
+      journeysJoined[journeyId] = false;
+      wx.setStorageSync('journeys_joined', journeysJoined);
+    }
+
+    var journeysEnd = wx.getStorageSync('journeys_end')
+    if (journeysEnd) {
+      var journeyEnd = journeysEnd[journeyId]
+      this.setData({
+        end: journeyEnd
+      })
+    } else {
+      var journeysEnd = {};
+      journeysEnd[journeyId] = true;
+      wx.setStorageSync('journeys_end', journeysEnd);
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+  onJoinTap: function(event) {
+    // this.getJourneysJoinedSyc();
+    // this.getJourneysJoinedAsy();
+    var journeysJoined = wx.getStorageSync('journeys_joined');
+    var journeyJoined = journeysJoined[this.data.currentJourneyId];
+
+    journeyJoined = !journeyJoined;
+    journeysJoined[this.data.currentJourneyId] = journeyJoined;
+    this.showModal(journeysJoined,journeyJoined);
+
+    // wx.setStorageSync('journeys_joined', journeysJoined);
+
+    // this.setData({
+    //      joined:journeyJoined
+    // })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
+  showModal: function (journeysJoined, journeyJoined) {
+    var that = this;
+    wx.showModal({
+      title: "参与",
+      content: journeyJoined ? "确认参与？" : "确认推出？",
+      showCancel: "true",
+      cancelText: "取消",
+      cancelColor: "#333",
+      confirmText: "确认",
+      confirmColor: "#405f80",
+      success: function(res) {
+        if (res.confirm) {
+          wx.setStorageSync('journeys_joined', journeysJoined);
+          // 更新数据绑定变量，从而实现切换图片
+          that.setData({
+            joined: journeyJoined
+          })
+        }
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
+  onEndTap: function (event) {
+    var journeysEnd = wx.getStorageSync('journeys_end');
+    var journeyEnd = journeysEnd[this.data.currentJourneyId];
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
+    journeyEnd = !journeyEnd;
+    journeysEnd[this.data.currentJourneyId] = journeyEnd;
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
+    wx.setStorageSync('journey_end', journeyEnd);
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+    this.setData({
+      end:journeyEnd
+    })
   }
+
 })

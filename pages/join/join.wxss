@@ -9,3 +9,24 @@
      width:100%;
      height:600rpx;
  }
+ 
+ .submit {
+  /* margin-top:30px; */
+  display: flex;
+  justify-content: center;
+  /* flex-flow: column wrap; */
+  padding: 0 10px;
+}
+
+ .sub-button {
+  display: flex;
+  width:180rpx;
+  background-color: #0398e7;
+  color: #fff;
+  line-height: 1.8;
+  border-radius: 30px;
+  padding: 5px 90px;
+  margin-top: 20px;
+  text-align: center;
+  justify-content: center;
+}
