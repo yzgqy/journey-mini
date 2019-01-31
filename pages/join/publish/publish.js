@@ -26,7 +26,7 @@ Page({
     })
   },
   userEndTimeInput: function (e) {
-    //设置电话
+    //设置结束时间
     this.setData({
       endTime: e.detail.value
     })
