@@ -42,7 +42,8 @@ Page({
       desc: e.detail.value
     })
   },
-  
+
+
   submit: function () { //提交input信息到后台
     var theme = this.data.theme;
     console.log(theme)
