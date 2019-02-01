@@ -26,13 +26,14 @@ Page({
 
     var journeysEnd = wx.getStorageSync('journeys_end')
     if (journeysEnd) {
-      var journeyEnd = journeysEnd[journeyId]
+      var journeyEnd = journeysEnd[journeyId];
+  
       this.setData({
-        end: journeyEnd
+        end: journeyEnd,
       })
     } else {
       var journeysEnd = {};
-      journeysEnd[journeyId] = true;
+      journeysEnd[journeyId] = false;
       wx.setStorageSync('journeys_end', journeysEnd);
     }
   },
@@ -83,7 +84,7 @@ Page({
     journeyEnd = !journeyEnd;
     journeysEnd[this.data.currentJourneyId] = journeyEnd;
 
-    wx.setStorageSync('journey_end', journeyEnd);
+    wx.setStorageSync('journeys_end', journeysEnd);
 
     this.setData({
       end:journeyEnd
