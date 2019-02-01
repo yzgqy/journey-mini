@@ -26,7 +26,7 @@ Page({
     })
   },
   userEndTimeInput: function (e) {
-    //设置结束时间
+    //设置电话
     this.setData({
       endTime: e.detail.value
     })
@@ -42,8 +42,7 @@ Page({
       desc: e.detail.value
     })
   },
-
-
+  
   submit: function () { //提交input信息到后台
     var theme = this.data.theme;
     console.log(theme)
