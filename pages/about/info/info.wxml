@@ -1,48 +1,49 @@
+<wxs src="../../../wxs/time_op.wxs" module="tools" />
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">姓名：{{name}}</text>
+      <text class="label">姓名：{{data.nickname}}</text>
     </view>
     <view class="hr"></view>
 </view>
 
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">描述：{{desc}}</text>
+      <text class="label">描述：{{data.desc}}</text>
     </view>
     <view class="hr"></view>
 </view>
 
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">生日：{{birthday}}</text>
+      <text class="label">生日：{{tools.getYMd(data.birthday)}}</text>
     </view>
     <view class="hr"></view>
 </view>
 
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">性别：{{gender}}</text>
+      <text class="label">性别：{{data.gender==0?'男':(data.gender==1?'女':'未知')}}</text>
     </view>
     <view class="hr"></view>
 </view>
 
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">手机号码：{{phone}}</text>
+      <text class="label">手机号码：{{data.phone}}</text>
     </view>
     <view class="hr"></view>
 </view>
 
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">城市：{{city}}</text>
+      <text class="label">城市：{{data.city}}</text>
     </view>
     <view class="hr"></view>
 </view>
 
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">学校：{{school}}</text>
+      <text class="label">学校：{{data.school}}</text>
     </view>
     <view class="hr"></view>
 </view>

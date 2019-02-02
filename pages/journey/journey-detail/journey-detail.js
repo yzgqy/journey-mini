@@ -5,48 +5,54 @@ Page({
 
   },
   onLoad: function(option) {
-    var journeyId = option.id;
-    this.data.currentJourneyId = journeyId;
-    var journeyData = journeysData.journeyList[journeyId];
     this.setData({
-      journeyData: journeyData
+      journeyData: JSON.parse(option.journey),
     })
-
-    var journeysJoined = wx.getStorageSync('journeys_joined')
-    if (journeysJoined) {
-      var journeyJoined = journeysJoined[journeyId]
-      this.setData({
-        joined: journeyJoined
-      })
-    } else {
-      var journeysJoined = {};
-      journeysJoined[journeyId] = false;
-      wx.setStorageSync('journeys_joined', journeysJoined);
-    }
-
-    var journeysEnd = wx.getStorageSync('journeys_end')
-    if (journeysEnd) {
-      var journeyEnd = journeysEnd[journeyId];
-  
-      this.setData({
-        end: journeyEnd,
-      })
-    } else {
-      var journeysEnd = {};
-      journeysEnd[journeyId] = false;
-      wx.setStorageSync('journeys_end', journeysEnd);
-    }
+    var journeyId=this.data.journeyData.id
+    var that = this
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/participant?userId=190201BNCWDKG9AW&journeyId='+journeyId,
+      method: 'GET',
+      success: function (res) {
+        var participant = res.data.data
+        if (participant.length==0){
+          that.setData({
+            joined:false
+          })
+        }
+        else{
+          console.log(1)
+          that.setData({
+            joined: true
+          })
+        }
+      }
+    })
+   
   },
 
   onJoinTap: function(event) {
     // this.getJourneysJoinedSyc();
     // this.getJourneysJoinedAsy();
+    var journeyId = this.data.journeyData.id
+    console.log(journeyId)
+    var userId ='190201BNCWDKG9AW'
     var journeysJoined = wx.getStorageSync('journeys_joined');
     var journeyJoined = journeysJoined[this.data.currentJourneyId];
-
     journeyJoined = !journeyJoined;
     journeysJoined[this.data.currentJourneyId] = journeyJoined;
-    this.showModal(journeysJoined,journeyJoined);
+    this.showModal(journeysJoined, journeyJoined);
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/participant',
+      method: 'POST',
+      data:{
+          journeyid:journeyId,
+          userid:userId,
+          isinvited:1,
+          desc: "这是描述：isinvited是表示该用户是否被邀请，是为1，不是为0"
+      }
+    })
+   
 
     // wx.setStorageSync('journeys_joined', journeysJoined);
 

@@ -54,7 +54,37 @@ Page({
     console.log(assemblyPoint)
     var desc = this.data.desc;
     console.log(desc)
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/journey',
+      method: 'POST',
+    
+      data: {
+        journey:{
+          theme:theme,
+          money:money,
+          endtime:endTime,
+          assemblypoint:assemblyPoint,
+          desc:desc,
+          starttime:endTime,
+          sponsorid:'190201BCZ28GZ1WH',
+          ispublic:1,
+          isfind:0,
+          cover: "/cover/xx.png",
+          place: "游玩地点",
+        },
+        schedulingList: [
+          {
+            "starttime": 1549007987,
+            "endtime": 1549007987,
+            "activityname": "活动名称"
+          }, {
+            "starttime": 1549007987,
+            "endtime": 1549007987,
+            "activityname": "活动名称"
+          }]
+      }
 
+    })
     wx.navigateBack({
       url: '../join',
     })
