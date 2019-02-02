@@ -2,7 +2,7 @@
 <import src="../journey/journey-template/journey-template.wxml" />
 <view>
     <block wx:for="{{journeyList}}" wx:for-item="item" wx:for-index="idx">
-        <view wx:if="{{item.isFinished === 0}}"  catchtap="onPostTap" data-journeyId="{{item.journeyId}}">
+        <view  catchtap="onPostTap" data-idx='{{idx}}'>
              <template is="journeyItem" data="{{...item}}" />
         </view>
 </block>

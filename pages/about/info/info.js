@@ -4,15 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:"王博",
-    birthday: "1995.04.27",
-    gender: "男",
-    desc: "null",
-    phone: "18851750813",
-    city: "江苏南京",
-    school: "南京大学",
-    createAt: "2019.01.28",
-    updateAt: "2019.01.28"
+
     
   },
 
@@ -20,12 +12,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/user/190201BNCWDKG9AW',
+      method: 'GET',
+      header: {
+        "Content-Type": "application/json"
+      },
+      success: function (res) {
+        console.log(res.data.data)
+        that.setData({
+          data:res.data.data,
+         
+        })
+        console.log(that.data.data.birthday.substring(0,10))
+      }
+    })
     
   },
 
   update: function (event) {
+    var t=this
+    var id = t.data.data.id
     wx.navigateTo({
-      url: './update/update',
+      url: './update/update?id='+id
     })
   },
 })

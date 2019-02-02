@@ -15,7 +15,11 @@ Page({
     city: "",
     school: "",
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    this.setData({
+      id:options.id
+    })
+    console.log(this.data.id)
   },
 
 
@@ -74,7 +78,21 @@ Page({
     console.log(phone)
     var gender = this.data.items[this.data.genderSelect].value;
     console.log(gender)
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/user',
+      method: 'PUT',
+      data: {
+        id: this.data.id,
+        nickname: name,
+        birthday: birthday,
+        gender: gender == '女' ? 1 : (this.data.gender == '男' ? 0 : 2),
+        phone: phone,
+        city: city,
+        school: school,
+        desc: desc
+      }
 
+    })
     wx.navigateBack({
       url: '../info',
     })
