@@ -17,7 +17,10 @@
     <text>出游描述：\n</text>
     <text>{{journeyData.desc}}</text>
   </view>
-
+  <view class="button-map" bindtap='onjoinMap' latitude="{{latitude}}"
+    longitude="{{longitude}}">
+      <text class="map" space='emsp'>查看地图</text>
+  </view>
   <view class="button" wx:if="{{end}}"></view>
   <view class="button" wx:else>
     <view class="button-out" wx:if="{{joined}}" bindtap='onJoinTap'>

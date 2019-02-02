@@ -33,10 +33,6 @@
       {
         "pagePath": "pages/about/about",
         "text": "关于我"
-      },
-      {
-        "pagePath": "pages/map/map",
-        "text": "地图"
       }
     ]
   },

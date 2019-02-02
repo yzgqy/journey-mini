@@ -2,7 +2,8 @@ var journeysData = require('../../../data/data.js')
 var app = getApp();
 Page({
   data: {
-
+    latitude:"",
+    longitude:"",
   },
   onLoad: function(option) {
     this.setData({
@@ -15,6 +16,7 @@ Page({
       method: 'GET',
       success: function (res) {
         var participant = res.data.data
+        console.log(participant)
         if (participant.length==0){
           that.setData({
             joined:false
@@ -28,9 +30,31 @@ Page({
         }
       }
     })
-   
-  },
 
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/journey/' + journeyId,
+      method: 'GET',
+      success: function (res) {
+        var journey = res.data.data.journey
+        var schedulingList = res.data.data.participantList
+        var participantList = res.data.data.participantList
+        console.log(journey)
+        that.setData({
+          latitude: journey.latitude,
+          longitude: journey.longitude,
+        })
+      }
+    })
+  },
+  onjoinMap: function (event){
+    var latitude = this.data.latitude
+    var longitude = this.data.longitude
+    console.log(latitude)
+    console.log(longitude)
+    wx.navigateTo({
+      url: '/pages/map/map?latitude=' + latitude + "&longitude=" + longitude,
+    })
+  },
   onJoinTap: function(event) {
     // this.getJourneysJoinedSyc();
     // this.getJourneysJoinedAsy();
