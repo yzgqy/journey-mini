@@ -1,0 +1,8 @@
+var getYMd = function (val) {
+  return val.substring(0,10)
+}
+var getHms=function(val){
+  return val.substring(0,10)+" "+val.substring(11,19)
+}
+module.exports.getYMd = getYMd;
+module.exports.getHms = getHms;
