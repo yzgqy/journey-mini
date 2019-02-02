@@ -1,14 +1,15 @@
+<wxs src="../../../wxs/time_op.wxs" module="tools" />
 <view class="container-detail">
   <view class="topic-date">
     <text class="title">{{journeyData.theme}}</text>
     <view class="author-data">
       <text class="author">{{journeyData.sponsorId}}</text>
-      <text class="const-text">发表于：{{starttime}}</text>
+      <text class="const-text">发表于：{{tools.getHms(journeyData.createdat)}}</text>
     </view>
     <view class="hr"></view>
   </view>
   <view class="journey-detail">
-    <text>出游时间：{{endtime}}\n</text>
+    <text>出游时间：{{tools.getHms(journeyData.createdat)}}\n</text>
     <text>集合地点：{{journeyData.assemblypoint}}\n</text>
     <text>预算：{{journeyData.money}}\n</text>
   </view>
@@ -17,27 +18,35 @@
     <text>出游描述：\n</text>
     <text>{{journeyData.desc}}</text>
   </view>
-  <view class="button-map" bindtap='onjoinMap' latitude="{{latitude}}"
-    longitude="{{longitude}}">
-      <text class="map" space='emsp'>查看地图</text>
-  </view>
-  <view class="button" wx:if="{{end}}"></view>
-  <view class="button" wx:else>
-    <view class="button-out" wx:if="{{joined}}" bindtap='onJoinTap'>
-      <text class="join" space='emsp'>退  出</text>
-    </view>
-    <view class="button-join" wx:else bindtap='onJoinTap'>
-      <text class="join" space='emsp'>参  与</text>
-    </view>
-  </view>
-
-  <view class="button" wx:if="{{joined}}">
-     <view class="button-end" wx:if="{{end}}">
+  <view class="button" wx:if="{{end}}">
+    <view class="button-end">
      <text class="join">已结束</text>
     </view>
-     <view class="button-join" wx:else bindtap='onEndTap'>
-      <text class="join">确认到家</text>
-    </view>
   </view>
-  <view class="button" wx:else></view>
+  <view class="button" wx:else>
+    <view  wx:if="{{joinedandconfirmed}}">
+      <view class="button-join" bindtap='onEndTap'>
+         <text class="join">确认到家</text>
+      </view>
+      <view>\n </view>
+      <view class="button-out" bindtap='quit' data-type='index'>
+        <text class="join" space='emsp'>退  出</text>
+      </view>
+    </view>
+    <view class="button" wx:else>
+      <view class="button" wx:if="{{joined}}">
+        <view class="button-join" bindtap='onJoinTap'>
+         <text class="join" space='emsp'>已加入，未确认</text>
+        </view>
+        <view class="button-out" bindtap='quit' data-type='join'>
+          <text class="join" space='emsp'>退  出</text>
+        </view>
+      </view>
+      <view class="button"  wx:else>
+        <view class="button-join" bindtap='onJoinTap'>
+         <text class="join" space='emsp'>参  与</text>
+        </view>
+      </view>
+    </view> 
+  </view>
 </view>

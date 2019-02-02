@@ -12,9 +12,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var userId=getApp().globalData.userId
     var that=this
     wx.request({
-      url: 'https://njuqa.clsaa.com/api/user/190201BNCWDKG9AW',
+      url: 'https://njuqa.clsaa.com/api/user/' + userId,
       method: 'GET',
       header: {
         "Content-Type": "application/json"
