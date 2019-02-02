@@ -10,9 +10,8 @@
     "pages/about/share/share",
     "pages/journey/journey-detail/journey-detail",
     "pages/join/join",
-    "pages/join/publish/publish"
-  
-    
+    "pages/join/publish/publish",
+    "pages/map/map"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,9 +30,18 @@
         "text": "正在参与"
       },
       {
-        "pagePath":"pages/about/about",
+        "pagePath": "pages/about/about",
         "text": "关于我"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "地图"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }
