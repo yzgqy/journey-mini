@@ -15,6 +15,7 @@
     
   ],
   "window": {
+    "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "协同出游小助手",
