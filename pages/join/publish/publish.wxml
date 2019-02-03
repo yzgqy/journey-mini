@@ -13,7 +13,7 @@
   <view class="hr" style="margin-top:5px;"></view>
   <view class="info-wrap">
     <text class="label">结束时间:</text>
-    <input class="form-account" type="text" placeholder='请输入结束时间（2019.05.27）' value="{{endTime}}" bindblur='userEndTimeInput' />
+    <input class="form-account" type="text" placeholder='请输入结束时间(20190527)' value="{{endTime}}" bindblur='userEndTimeInput' />
   </view>
   <view class="hr" style="margin-top:5px;"></view>
   <view class="info-wrap">
