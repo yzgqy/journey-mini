@@ -1,3 +1,5 @@
+var util = require("../../../utils/util.js");
+
 Page({
   data: {
   
@@ -28,8 +30,9 @@ Page({
   userEndTimeInput: function (e) {
     //设置电话
     this.setData({
-      endTime: e.detail.value
+      endTime: util.js_date_time(e.detail.value)
     })
+    
   },
   userAssemblyPointInput: function (e) {
     //设置集合地点
@@ -49,6 +52,7 @@ Page({
     var money = this.data.money;
     console.log(money)
     var endTime = this.data.endTime;
+    
     console.log(endTime)
     var assemblyPoint = this.data.assemblyPoint;
     console.log(assemblyPoint)
