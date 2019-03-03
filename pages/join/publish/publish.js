@@ -11,6 +11,7 @@ Page({
   
     theme: "",
     money:"",
+    startTime: "",
     endTime:"",
     desc: "",
     texts: "",
@@ -34,6 +35,12 @@ Page({
     //设置预算
     this.setData({
       money: e.detail.value
+    })
+  },
+  userStartTimeInput: function (e) {
+    //设置电话
+    this.setData({
+      endTime: e.detail.value
     })
   },
   userEndTimeInput: function (e) {
@@ -60,7 +67,19 @@ Page({
     var money = this.data.money;
     console.log(money)
     var endTime = this.data.endTime;
-    console.log(endTime)
+    endTime = endTime.substring(0, 19);
+    endTime = endTime.replace(/-/g, '/');
+    var timestamp1 = new Date(endTime).getTime();
+
+    console.log(timestamp1)
+
+    var startTime = this.data.startTime;
+    startTime = startTime.substring(0, 19);
+    startTime = startTime.replace(/-/g, '/');
+    var timestamp2 = new Date(startTime).getTime();
+
+    console.log(timestamp2)
+
     var assemblyPoint = this.data.assemblyPoint;
     console.log(assemblyPoint)
     var desc = this.data.desc;
@@ -75,10 +94,10 @@ Page({
         journey:{
           theme:theme,
           money:money,
-          endtime:endTime,
+          endtime: timestamp1,
           assemblypoint:assemblyPoint,
           desc:desc,
-          starttime:endTime,
+          starttime: timestamp2,
           sponsorid:'190201BCZ28GZ1WH',
           ispublic:1,
           isfind:0,

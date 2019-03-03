@@ -1,5 +1,13 @@
 //app.js
 App({//注册小程序
+  globalData: {
+    appid: "wx1549d03167ecb49f",
+    secret: '22dff464f0c121810a1f6319e16b32a7',
+    OPEN_ID: '',
+    SESSION_KEY: '',
+    userId: '190202CK9K604H00'
+
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -33,7 +41,4 @@ App({//注册小程序
       }
     })
   },
-  globalData: {
-    userInfo: null
-  }
 })
