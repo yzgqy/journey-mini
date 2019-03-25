@@ -5,7 +5,7 @@ App({//注册小程序
     secret: '22dff464f0c121810a1f6319e16b32a7',
     OPEN_ID: '',
     SESSION_KEY: '',
-    userId: '190202CK9K604H00'
+    userId: ''
 
   },
   onLaunch: function () {
@@ -29,7 +29,6 @@ App({//注册小程序
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {

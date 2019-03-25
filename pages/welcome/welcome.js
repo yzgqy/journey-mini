@@ -7,7 +7,8 @@ Page({//注册当前页面
     motto: 'GO！',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    userId:''
   },
   //事件处理函数
   bindViewTap: function () {
@@ -53,33 +54,57 @@ Page({//注册当前页面
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-    wx.login({
-      success: function (res) {
-        // console.log(res)
-        //获取登录的临时凭证
-        var code = res.code;
-        //调用后端，获取微信的session_key，secret
-        wx.request({
-          url: "https://njuqa.clsaa.com/api/wxLogin?code=" + code,
-          method: "POST",
-          success: function (result) {
-            console.log(result);
-            console.log(result.data.data.openid);
-            app.globalData.userInfo.openid = result.data.data.openid;
-            // 保存用户信息到本地缓存，可以用作小程序端的拦截器
-            // app.setGlobalUserInfo(e.detail.userInfo);
-            // wx.redirectTo({
-            //   url: '../index/index',
-            // })
-          }
-        })
+    console.log(e.detail.userInfo)
+    var nickname = app.globalData.userInfo.nickName
+    wx.request({
+      url: "https://njuqa.clsaa.com/api/user/nickname/" + nickname,
+      method: "GET",
+      success: function (result) {
+        app.globalData.userId = result.data.data.id;
+        console.log("welcome 中设置id：")
+        console.log(app.globalData.userId)
       }
     })
-    console.log(this.data.userInfo);
-    console.log(app.globalData.userInfo)
+
+
+    
+    // wx.login({
+    //   success: function (res) {
+    //     // console.log(res)
+    //     //获取登录的临时凭证
+    //     var code = res.code;
+    //     //调用后端，获取微信的session_key，secret
+    //     wx.request({
+    //       url: "https://njuqa.clsaa.com/api/wxLogin?code=" + code,
+    //       method: "POST",
+    //       success: function (result) {
+    //         console.log(result);
+    //         console.log(result.data.data.openid);
+    //         app.globalData.userInfo.openid = result.data.data.openid;
+    //         // 保存用户信息到本地缓存，可以用作小程序端的拦截器
+    //         // app.setGlobalUserInfo(e.detail.userInfo);
+    //         // wx.redirectTo({
+    //         //   url: '../index/index',
+    //         // })
+    //       }
+    //     })
+    //   }
+    // })
+    // console.log(this.data.userInfo);
+    // console.log(app.globalData.userInfo)
   },
 
   onStart(event) {
+    var nickname = app.globalData.userInfo.nickName
+              wx.request({
+                url: "https://njuqa.clsaa.com/api/user/nickname/" + nickname,
+                method: "GET",
+                success: function (result) {
+                  app.globalData.userId = result.data.data.id;
+                  console.log("go！ 中设置id：")
+                  console.log(app.globalData.userId)
+                }
+              })
     wx.switchTab({
       url: '../index/index',
     })

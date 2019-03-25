@@ -1,8 +1,31 @@
-
+const app = getApp()
 Page({
   data: {
   },
   onLoad: function () {
+
+    var nickname = app.globalData.userInfo.nickName
+    var gender = app.globalData.userInfo.gender
+    var city = app.globalData.userInfo.city
+    var avatar = app.globalData.userInfo.avatarUrl
+    var id = app.globalData.userId
+    console.log(nickname)
+    console.log(gender)
+    console.log(city)
+    console.log(avatar)
+    console.log(id)
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/user',
+      method: 'PUT',
+      data: {
+        id: id,
+        nickname: nickname,
+        gender: gender,
+        city: city
+      }
+
+    })
+
     var that=this
     wx.request({
       url: 'https://njuqa.clsaa.com/api/journey',

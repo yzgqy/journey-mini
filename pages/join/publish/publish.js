@@ -6,6 +6,8 @@ var qqmapsdk = new QQMapWX({
   key: '47IBZ-QMA6I-JOWGH-5DSHJ-KGEDO-NSF44' // 必填
 });
 
+const app = getApp()
+
 Page({
   data: {
   
@@ -98,7 +100,7 @@ Page({
           assemblypoint:assemblyPoint,
           desc:desc,
           starttime: timestamp2,
-          sponsorid:'190201BCZ28GZ1WH',
+          sponsorid: app.globalData.userId,
           ispublic:1,
           isfind:0,
           cover: "/cover/xx.png",

@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var userId = getApp().globalData.userId
+    var userId = app.globalData.userId
     console.log(userId)
     var that = this
     wx.request({
@@ -27,7 +28,7 @@ Page({
           data: res.data.data,
 
         })
-        console.log(that.data.data.birthday.substring(0, 10))
+        // console.log(that.data.data.birthday.substring(0, 10))
       }
     })
 
