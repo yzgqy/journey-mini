@@ -22,7 +22,7 @@
 
 <view class="form-here">
     <view class="info-wrap">
-      <text class="label">性别：{{data.gender==0?'男':(data.gender==1?'女':'未知')}}</text>
+      <text class="label">性别：{{data.gender==0?'男':(data.gender==1?'女':'保密')}}</text>
     </view>
     <view class="hr"></view>
 </view>

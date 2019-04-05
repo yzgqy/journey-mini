@@ -34,6 +34,25 @@ Page({
 
   },
 
+  onShow: function () {
+    var userId = app.globalData.userId
+    var that = this
+    wx.request({
+      url: 'https://njuqa.clsaa.com/api/user/' + userId,
+      method: 'GET',
+      header: {
+        "Content-Type": "application/json"
+      },
+      success: function (res) {
+        console.log(res.data.data)
+        that.setData({
+          data: res.data.data,
+        })
+      }
+    })
+    console.log('shuaxin')
+  },
+
   update: function (event) {
     var t = this
     var id = t.data.data.id
