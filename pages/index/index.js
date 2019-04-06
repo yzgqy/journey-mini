@@ -121,6 +121,9 @@ Page({
         url: 'https://njuqa.clsaa.com/api/journey',
         method: 'GET',
         success: function (res) {
+          for(var i =0;i <res.data.data.length;i++)
+            if (!res.data.data.desc)
+              res.data.data[i].desc=''
           that.setData({
             journeyList: res.data.data
           })
@@ -144,6 +147,9 @@ Page({
         url: 'https://njuqa.clsaa.com/api/journey/code/' + code,
         method: 'GET',
         success: function (res) {
+          for (var i = 0; i < res.data.data.length; i++)
+            if (!res.data.data.desc)
+              res.data.data[i].desc = ''
           that.setData({
             journeyList: res.data.data
           })
