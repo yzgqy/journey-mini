@@ -14,6 +14,20 @@ Page({
       journeyData: JSON.parse(option.journey),
       type: option.type
     })
+
+    var createdat = this.data.journeyData.createdat
+    var starttime = this.data.journeyData.starttime
+    var endtime = this.data.journeyData.endtime
+    createdat = createdat.substring(0, 10);
+    starttime = starttime.substring(0, 10);
+    endtime = endtime.substring(0, 10);
+   
+    this.setData({
+      createdat: createdat,
+      starttime: starttime,
+      endtime: endtime,
+    })
+
     var userId = app.globalData.userId
     var journeyId=this.data.journeyData.id
     var that = this

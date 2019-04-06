@@ -3,13 +3,13 @@
     <text class="title">{{journeyData.theme}}</text>
     <view class="author-data">
       <text class="author">{{journeyData.sponsorId}}</text>
-      <text class="const-text">发表于：{{journeyData.createdat}}</text>
+      <text class="const-text">发表于：{{createdat}}</text>
     </view>
     <view class="hr"></view>
   </view>
   <view class="journey-detail">
-    <text>出游开始时间：{{journeyData.starttime}}\n</text>
-    <text>出游结束时间：{{journeyData.endtime}}\n</text>
+    <text>出游开始时间：{{starttime}}\n</text>
+    <text>出游结束时间：{{endtime}}\n</text>
     <text>集合地点：{{journeyData.assemblypoint}}\n</text>
     <text>预算：{{journeyData.money}}\n</text>
   </view>
