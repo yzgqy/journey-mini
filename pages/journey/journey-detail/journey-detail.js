@@ -1,30 +1,37 @@
 var journeysData = require('../../../data/data.js')
-var userId = getApp().globalData.userId
+const app = getApp()
 Page({
   data: {
     latitude:"",
     longitude:"",
     joined: false,
     joinedandconfirmed: false,
-    end: false
+    end: false,
+    // userId: app.globalData.userId
   },
   onLoad: function(option) {
     this.setData({
       journeyData: JSON.parse(option.journey),
       type: option.type
     })
+    var userId = app.globalData.userId
     var journeyId=this.data.journeyData.id
     var that = this
     wx.request({
       url: 'https://njuqa.clsaa.com/api/participant?userId=' + userId + '&journeyId=' + journeyId,
       method: 'GET',
       success: function (res) {
+        console.log(userId)
+        console.log("参与者信息")
         console.log(res.data.data)
         var id = res.data.data[0].id
         var type = that.data.type
         var participant = res.data.data[0]
         var isConfirmed = participant.isconfirmed
         var ishome = participant.ishome
+        // console.log("哈哈哈哈")
+        // console.log(id)
+        // console.log(participant)
         that.setData({
           id: id
         })
@@ -57,6 +64,7 @@ Page({
         var journey = res.data.data.journey
         var schedulingList = res.data.data.participantList
         var participantList = res.data.data.participantList
+        console.log("旅游详情信息")
         console.log(journey)
         that.setData({
           latitude: journey.latitude,
@@ -79,7 +87,7 @@ Page({
     // this.getJourneysJoinedAsy();
     var journeyId = this.data.journeyData.id
     console.log(journeyId)
-    var userId ='190201BNCWDKG9AW'
+    // var userId ='190201BNCWDKG9AW'
     var journeysJoined = wx.getStorageSync('journeys_joined');
     var journeyJoined = journeysJoined[this.data.currentJourneyId];
     journeyJoined = !journeyJoined;
@@ -211,8 +219,9 @@ Page({
   },
 
   onEndTap: function (event) {
+    var userId = app.globalData.userId
     wx.request({
-      url: 'https://njuqa.clsaa.com/api/journey/home?userId=' + userId + '&journeyId=' + this.data.journeyData.id,
+      url: 'https://njuqa.clsaa.com/api/journey/home?userId=' + this.data.userId + '&journeyId=' + this.data.journeyData.id,
       method: 'GET',
     })
     this.setData({
