@@ -14,6 +14,13 @@ Page({
       journeyData: JSON.parse(option.journey),
       type: option.type
     })
+    var starttime = new Date(this.data.journeyData.starttime).toLocaleString()
+    var endtime = new Date(this.data.journeyData.endtime).toLocaleString()
+    this.setData({
+      starttime: starttime,
+      endtime: endtime,
+    })
+
     var userId = app.globalData.userId
     var journeyId=this.data.journeyData.id
     var that = this
