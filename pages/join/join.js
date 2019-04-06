@@ -10,23 +10,13 @@ Page({
     var that = this;
     var userId = getApp().globalData.userId
     wx.request({
-      url: 'https://njuqa.clsaa.com/api/participant?userId=' + userId,
+      url: 'https://njuqa.clsaa.com/api/journey?userId=' + userId+'&flag=0',
       method: 'GET',
-      success: function (res) {
-        var length = res.data.data.length
-        for (var i = 0; i < length; i++) {
-          var journeyid = res.data.data[i].journeyid
-          wx.request({
-            url: 'https://njuqa.clsaa.com/api/journey/' + journeyid,
-            method: 'GET',
-            success: function (resp) {
-              journeyList.push(resp.data.data.journey)
-              that.setData({
-                journeyList: journeyList
-              })
-            }
-          })
-        }
+      success: function (resp) {
+        journeyList = resp.data.data
+        that.setData({
+          journeyList: journeyList
+        })
       }
 
     })
@@ -41,24 +31,15 @@ Page({
     var that = this;
     var userId = getApp().globalData.userId
     wx.request({
-      url: 'https://njuqa.clsaa.com/api/participant?userId=' + userId,
+      url: 'https://njuqa.clsaa.com/api/journey?userId=' + userId + '&flag=0',
       method: 'GET',
-      success: function (res) {
-        var length = res.data.data.length
-        for (var i = 0; i < length; i++) {
-          var journeyid = res.data.data[i].journeyid
-          wx.request({
-            url: 'https://njuqa.clsaa.com/api/journey/' + journeyid,
-            method: 'GET',
-            success: function (resp) {
-              journeyList.push(resp.data.data.journey)
-              that.setData({
-                journeyList: journeyList
-              })
-            }
-          })
-        }
+      success: function (resp) {
+        journeyList =resp.data.data
+        that.setData({
+          journeyList: journeyList
+        })
       }
+
     })
     console.log(that.data.journeyList)
   },
