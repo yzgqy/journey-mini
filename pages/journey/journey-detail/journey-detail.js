@@ -157,16 +157,18 @@ Page({
     var joined = this.data.joined
     var end = this.data.end
     var journeyId = this.data.journeyData.id
+    var userId = app.globalData.userId
     console.log(journeyId)
-    this.showModal(joined, journeyId);
+    console.log("用户id")
+    console.log(userId)
+    this.showModal(joined, journeyId,userId);
     // wx.setStorageSync('journeys_joined', journeysJoined);
 
     // this.setData({
     //      joined:journeyJoined
     // })
   },
-  showModal: function (joined, journeyId) {
-    console.log(journeyId)
+  showModal: function (joined, journeyId,userId) {
     var that = this;
     var content = ""
     if (joined == false) {
@@ -191,7 +193,7 @@ Page({
               method: 'POST',
               data: {
                 journeyid: journeyId,
-                userid: that.data.userId,
+                userid: userId,
                 isinvited: 1,
                 desc: "这是描述：isinvited是表示该用户是否被邀请，是为1，不是为0"
               },
@@ -202,7 +204,7 @@ Page({
           }
           else {
             wx.request({
-              url: 'https://njuqa.clsaa.com/api/journey/confirm?userId=' + that.data.userId + '&journeyId=' + journeyId,
+              url: 'https://njuqa.clsaa.com/api/journey/confirm?userId=' + userId + '&journeyId=' + journeyId,
               method: 'GET'
 
             })
@@ -221,14 +223,14 @@ Page({
   onEndTap: function (event) {
     var userId = app.globalData.userId
     wx.request({
-      url: 'https://njuqa.clsaa.com/api/journey/home?userId=' + this.data.userId + '&journeyId=' + this.data.journeyData.id,
+      url: 'https://njuqa.clsaa.com/api/journey/home?userId=' + userId + '&journeyId=' + this.data.journeyData.id,
       method: 'GET',
-      success: function (res) {
-        i = 1
-      },
-      error: function (res) {
-        i=1
-      }
+      // success: function (res) {
+      //   i = 1
+      // },
+      // error: function (res) {
+      //   i=1
+      // }
     })
     
     this.setData({
