@@ -2,7 +2,7 @@
     <!-- <view class="form-account"> -->
         <view class="info-wrap" style="margin-top:0">
           <text class="label">姓名:</text>
-          <input class="form-account" type="text" placeholder='请输入姓名' value="{{data.nickname}}" bindblur='userNameInput' />
+          <text class="form-account">{{data.nickname}}</text>
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap" style="margin-bottom:20px">
