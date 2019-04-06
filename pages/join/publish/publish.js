@@ -62,8 +62,41 @@ Page({
       desc: e.detail.value
     })
   },
-  
+
+  showNullMsg:function(title,time=2000){
+    wx.showToast({
+      title: title+'不能为空',
+      icon: 'false',
+      duration: time
+    })
+  },
+  canBeNull: function () { 
+    if (!this.data.theme) {
+      this.showNullMsg('主体')
+      return false
+    }
+    if (!this.data.money) {
+      this.showNullMsg('预算')
+      return false
+    }
+    if (!this.data.startTime) {
+      this.showNullMsg('开始时间')
+      return false
+    }
+    if (!this.data.endTime) {
+      this.showNullMsg('结束时间')
+      return false
+    }
+    if (this.data.latitude == 0 || this.data.longitude == 0) {
+      this.showNullMsg('地点')
+      return false
+    }
+    return true
+  },
   submit: function () { //提交input信息到后台
+    if (!this.canBeNull())
+      return;
+
     var theme = this.data.theme;
     console.log(theme)
     var money = this.data.money;
