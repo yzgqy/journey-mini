@@ -60,6 +60,7 @@ Page({
       url: 'https://njuqa.clsaa.com/api/journey/' + journeyId,
       method: 'GET',
       success: function (res) {
+        console.log(res.data.data)
         var journey = res.data.data.journey
         var schedulingList = res.data.data.participantList
         var participantList = res.data.data.participantList
