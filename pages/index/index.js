@@ -122,7 +122,7 @@ Page({
         method: 'GET',
         success: function (res) {
           for(var i =0;i <res.data.data.length;i++)
-            if (!res.data.data.desc)
+            if (!res.data.data[i].desc)
               res.data.data[i].desc=''
           that.setData({
             journeyList: res.data.data
@@ -148,7 +148,7 @@ Page({
         method: 'GET',
         success: function (res) {
           for (var i = 0; i < res.data.data.length; i++)
-            if (!res.data.data.desc)
+            if (!res.data.data[i].desc)
               res.data.data[i].desc = ''
           that.setData({
             journeyList: res.data.data
