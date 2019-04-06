@@ -2,9 +2,9 @@ const app = getApp()
 Page({
   data: {
     items: [
-      { id: '0', value: '男', checked: 'true' },
-      { id: '1', value: '女' },
-      { id: '2', value: '保密' },
+      { id: '0', value: '保密', checked: 'true' },
+      { id: '1', value: '男' },
+      { id: '2', value: '女' },
     ],
 
     // name: "",
