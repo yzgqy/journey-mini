@@ -66,6 +66,7 @@ Page({
         var participantList = res.data.data.participantList
         console.log("旅游详情信息")
         console.log(journey)
+        console.log(journeyId)
         that.setData({
           latitude: journey.latitude,
           longitude: journey.longitude,
