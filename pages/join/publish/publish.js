@@ -51,12 +51,12 @@ Page({
       endTime: e.detail.value
     })
   },
-  userAssemblyPointInput: function (e) {
-    //设置集合地点
-    this.setData({
-      assemblyPoint: e.detail.value
-    })
-  },
+  // userAssemblyPointInput: function (e) {
+  //   //设置集合地点
+  //   this.setData({
+  //     assemblyPoint: e.detail.value
+  //   })
+  // },
   userDescInput: function (e) {
     this.setData({
       desc: e.detail.value
@@ -84,6 +84,7 @@ Page({
     console.log(timestamp2)
 
     var assemblyPoint = this.data.assemblyPoint;
+    console.log("出游地点")
     console.log(assemblyPoint)
     var desc = this.data.desc;
     console.log(desc)
@@ -132,10 +133,12 @@ Page({
     var id = e.currentTarget.id;
     for (var i = 0; i < this.data.suggestion.length; i++) {
       if (i == id) {
+        console.log("输出地点信息")
         console.log(this.data.suggestion[i].title)
         console.log(this.data.suggestion[i].latitude)
         console.log(this.data.suggestion[i].longitude)
         this.setData({
+          assemblyPoint: this.data.suggestion[i].title,
           backfill: this.data.suggestion[i].title,
           latitude: this.data.suggestion[i].latitude,
           longitude: this.data.suggestion[i].longitude,
@@ -157,6 +160,7 @@ getsuggest: function (e) {
       keyword: e.detail.value, //用户输入的关键词，可设置固定值,如keyword:'KFC'
       //region:'北京', //设置城市名，限制关键词所示的地域范围，非必填参数
       success: function (res) {//搜索成功后的回调
+        console.log("搜索成功后回调");
         console.log(res);
         var sug = [];
         for (var i = 0; i < res.data.length; i++) {
