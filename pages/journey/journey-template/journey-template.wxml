@@ -1,5 +1,4 @@
 <wxs src="../../../wxs/time_op.wxs" module="tools" />
-<wxs src="../../../wxs/time_op.wxs" module="tools" />
 
 <template name="journeyItem">
   <view class="journey-container">
@@ -7,11 +6,11 @@
     <text class="journey-content">{{desc}}
             </text>
     <view class="journey-author-date">
-      <text class="journey-date">开始时间：{{tools.getHms(starttime)}}</text>
+      <text class="journey-date">开始时间：{{tools.getLocalTime(starttime)}}</text>
      
     </view>
     <view class="journey-author-date">
-     <text class="journey-date">结束时间：{{tools.getHms(endtime)}}</text>
+     <text class="journey-date">结束时间：{{tools.getLocalTime(endtime)}}</text>
     </view>
   </view>
 </template>
