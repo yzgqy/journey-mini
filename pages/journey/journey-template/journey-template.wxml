@@ -1,15 +1,17 @@
 <wxs src="../../../wxs/time_op.wxs" module="tools" />
+<wxs src="../../../wxs/time_op.wxs" module="tools" />
+
 <template name="journeyItem">
   <view class="journey-container">
     <text class="journey-title">{{theme}}</text>
     <text class="journey-content">{{desc}}
             </text>
     <view class="journey-author-date">
-      <text class="journey-date">开始时间：{{tools.getYMd(starttime)}}</text>
+      <text class="journey-date">开始时间：{{tools.getHms(starttime)}}</text>
      
     </view>
     <view class="journey-author-date">
-     <text class="journey-date">结束时间：{{tools.getYMd(endtime)}}</text>
+     <text class="journey-date">结束时间：{{tools.getHms(endtime)}}</text>
     </view>
   </view>
 </template>
