@@ -40,13 +40,13 @@ Page({
     })
   },
   userStartTimeInput: function (e) {
-    //设置电话
+    //设置开始时间
     this.setData({
-      endTime: e.detail.value
+      startTime: e.detail.value
     })
   },
   userEndTimeInput: function (e) {
-    //设置电话
+    //设置结束时间
     this.setData({
       endTime: e.detail.value
     })
@@ -68,6 +68,7 @@ Page({
     console.log(theme)
     var money = this.data.money;
     console.log(money)
+
     var endTime = this.data.endTime;
     endTime = endTime.substring(0, 19);
     endTime = endTime.replace(/-/g, '/');

@@ -5,11 +5,11 @@
     <text class="journey-content">{{desc}}
             </text>
     <view class="journey-author-date">
-      <text class="journey-date">开始时间：{{tools.getHms(starttime)}}</text>
+      <text class="journey-date">开始时间：{{tools.getYMd(starttime)}}</text>
      
     </view>
     <view class="journey-author-date">
-     <text class="journey-date">结束时间：{{tools.getHms(endtime)}}</text>
+     <text class="journey-date">结束时间：{{tools.getYMd(endtime)}}</text>
     </view>
   </view>
 </template>
