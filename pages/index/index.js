@@ -92,4 +92,66 @@ Page({
 
   },
 
+  searchInput(e) {
+    this.setData({
+      code: e.detail.value
+    })
+  },
+
+  search: function(){
+    var code = this.data.code
+    var nickname = app.globalData.userInfo.nickName
+    var gender = app.globalData.userInfo.gender
+    var city = app.globalData.userInfo.city
+    var avatar = app.globalData.userInfo.avatarUrl
+    var id = app.globalData.userId
+    if(code == ""){
+      console.log(0)
+      // wx.request({
+      //   url: 'https://njuqa.clsaa.com/api/user',
+      //   method: 'PUT',
+      //   data: {
+      //     id: id,
+      //     nickname: nickname,
+      //     gender: gender,
+      //     city: city
+      //   }
+      // })
+      var that = this
+      wx.request({
+        url: 'https://njuqa.clsaa.com/api/journey',
+        method: 'GET',
+        success: function (res) {
+          that.setData({
+            journeyList: res.data.data
+          })
+        }
+      })
+    }
+
+    else{
+      console.log(1)
+      wx.request({
+        url: 'https://njuqa.clsaa.com/api/user',
+        method: 'PUT',
+        data: {
+          id: id,
+          nickname: nickname,
+          gender: gender,
+          city: city
+        }
+      })
+      var that = this
+      wx.request({
+        url: 'https://njuqa.clsaa.com/api/journey/code/' + code,
+        method: 'GET',
+        success: function (res) {
+          that.setData({
+            journeyList: res.data.data
+          })
+        }
+      }) 
+    }
+  }
+
 })

@@ -14,6 +14,13 @@ Page({
       journeyData: JSON.parse(option.journey),
       type: option.type
     })
+    var starttime = new Date(this.data.journeyData.starttime).toLocaleString()
+    var endtime = new Date(this.data.journeyData.endtime).toLocaleString()
+    this.setData({
+      starttime: starttime,
+      endtime: endtime,
+    })
+
     var userId = app.globalData.userId
     var journeyId=this.data.journeyData.id
     var that = this
@@ -60,6 +67,7 @@ Page({
       url: 'https://njuqa.clsaa.com/api/journey/' + journeyId,
       method: 'GET',
       success: function (res) {
+        console.log(res.data.data)
         var journey = res.data.data.journey
         var schedulingList = res.data.data.participantList
         var participantList = res.data.data.participantList
