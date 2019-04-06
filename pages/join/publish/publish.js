@@ -15,14 +15,16 @@ Page({
     money:"",
     startTime: "",
     endTime:"",
+    startTimeDetail: "",
+    endTimeDetail: "",
     desc: "",
     texts: "",
     assemblyPoint: "",
     latitude: 0,
     longitude: 0,
-    hiddenName: false,
-
+    hiddenName: false
   },
+
   onLoad: function () {
   },
 
@@ -49,6 +51,25 @@ Page({
     //设置结束时间
     this.setData({
       endTime: e.detail.value
+    })
+  },
+  userStartTimeInputDetail: function (e) {
+    //设置开始时间
+    this.setData({
+      startTimeDetail: e.detail.value
+    })
+  },
+  userEndTimeInputDetail: function (e) {
+    //设置结束时间
+    this.setData({
+      endTimeDetail: e.detail.value
+    })
+  },
+
+  bindDateChange: function (e) {
+    //设置开始时间
+    this.setData({
+      startTime: e.detail.value
     })
   },
   // userAssemblyPointInput: function (e) {
@@ -102,14 +123,14 @@ Page({
     var money = this.data.money;
     console.log(money)
 
-    var endTime = this.data.endTime;
+    var endTime = this.data.endTime + " " + this.data.endTimeDetail + ":00";;
     endTime = endTime.substring(0, 19);
     endTime = endTime.replace(/-/g, '/');
     var timestamp1 = new Date(endTime).getTime();
 
     console.log(timestamp1)
 
-    var startTime = this.data.startTime;
+    var startTime = this.data.startTime + " " + this.data.startTimeDetail + ":00";;
     startTime = startTime.substring(0, 19);
     startTime = startTime.replace(/-/g, '/');
     var timestamp2 = new Date(startTime).getTime();
