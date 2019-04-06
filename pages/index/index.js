@@ -84,7 +84,7 @@ Page({
     // 显示顶部刷新图标
     wx.showNavigationBarLoading();
     var page = getCurrentPages().pop()
-    page.onLoad()
+    page.search()
     // 隐藏导航栏加载框
     wx.hideNavigationBarLoading();
     // 停止下拉动作
@@ -105,18 +105,17 @@ Page({
     var city = app.globalData.userInfo.city
     var avatar = app.globalData.userInfo.avatarUrl
     var id = app.globalData.userId
-    if(code == ""){
-      console.log(0)
-      // wx.request({
-      //   url: 'https://njuqa.clsaa.com/api/user',
-      //   method: 'PUT',
-      //   data: {
-      //     id: id,
-      //     nickname: nickname,
-      //     gender: gender,
-      //     city: city
-      //   }
-      // })
+    if(code == "" || code == undefined){
+      wx.request({
+        url: 'https://njuqa.clsaa.com/api/user',
+        method: 'PUT',
+        data: {
+          id: id,
+          nickname: nickname,
+          gender: gender,
+          city: city
+        }
+      })
       var that = this
       wx.request({
         url: 'https://njuqa.clsaa.com/api/journey',
@@ -130,7 +129,6 @@ Page({
     }
 
     else{
-      console.log(1)
       wx.request({
         url: 'https://njuqa.clsaa.com/api/user',
         method: 'PUT',

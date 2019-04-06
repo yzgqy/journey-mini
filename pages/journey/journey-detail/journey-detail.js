@@ -244,6 +244,22 @@ Page({
     this.setData({
       end: true
     })
-  }
+  },
+
+  textPaste() {
+    wx.showToast({
+      title: '复制成功',
+    })
+    wx.setClipboardData({
+      data: this.data.journeyData.code,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function(res) {
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
 
 })
