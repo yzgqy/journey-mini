@@ -4,5 +4,9 @@ var getYMd = function (val) {
 var getHms=function(val){
   return val.substring(0,10)+" "+val.substring(11,19)
 }
+var getLocalTime = function (val) {
+  return new Date(val).toLocaleString();
+}
 module.exports.getYMd = getYMd;
 module.exports.getHms = getHms;
+module.exports.getLocalTime = getLocalTime;
