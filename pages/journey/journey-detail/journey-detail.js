@@ -142,6 +142,7 @@ Page({
 
     })
   },
+  
   onJoinTap: function (event) {
     // this.getJourneysJoinedSyc();
     // this.getJourneysJoinedAsy();is

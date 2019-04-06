@@ -23,6 +23,7 @@
     <input class="form-account" type="text" placeholder='请输入结束时间（2019.05.27）' value="{{endTime}}" bindblur='userEndTimeInput' />
   </view>
   <view class="hr" style="margin-top:5px;"></view>
+  
   <view class="info-wrap">
     <text class="label">集合地点:</text>
     <input class="form-account" type="text" placeholder='请输入集合地点' value="{{backfill}}" bindinput="getsuggest" />
