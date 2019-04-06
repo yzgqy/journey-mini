@@ -24,14 +24,12 @@ Page({
         console.log(userId)
         console.log("参与者信息")
         console.log(res.data.data)
+        if (res.data.data[0] != null){
         var id = res.data.data[0].id
         var type = that.data.type
         var participant = res.data.data[0]
         var isConfirmed = participant.isconfirmed
         var ishome = participant.ishome
-        // console.log("哈哈哈哈")
-        // console.log(id)
-        // console.log(participant)
         that.setData({
           id: id
         })
@@ -54,6 +52,7 @@ Page({
             }
           }
         }
+      }
       }
     })
 
