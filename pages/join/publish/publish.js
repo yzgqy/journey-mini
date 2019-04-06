@@ -121,8 +121,16 @@ Page({
       }
 
     })
+    //wx.navigateBack({
+      //url: '../join',
+      //url: '/pages/index/index',
+    //})
+    // wx.navigateTo({
+    //   url: '/pages/index/index'
+    // })
+
     wx.navigateBack({
-      url: '../join',
+      delta: 2   //默认值是1
     })
   },
 
