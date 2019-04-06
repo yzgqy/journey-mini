@@ -69,7 +69,7 @@
   <view class="section" style="margin-top:30px">
     <form class="form-style" bindsubmit="bindFormSubmit">
       <textarea class="textarea-style" placeholder="请添加描述" name="desc" minlength="{{min}}" maxlength="{{max}}" bindblur="userDescInput">
-        <text class="hint">{{desc}}</text>
+        <!-- <text class="hint">{{desc}}</text> -->
       </textarea>
     </form>
   </view>
