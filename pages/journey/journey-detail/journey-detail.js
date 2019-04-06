@@ -224,7 +224,14 @@ Page({
     wx.request({
       url: 'https://njuqa.clsaa.com/api/journey/home?userId=' + this.data.userId + '&journeyId=' + this.data.journeyData.id,
       method: 'GET',
+      success: function (res) {
+        i = 1
+      },
+      error: function (res) {
+        i=1
+      }
     })
+    
     this.setData({
       end: true
     })

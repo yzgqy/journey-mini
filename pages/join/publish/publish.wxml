@@ -12,16 +12,36 @@
   </view>
   <view class="hr" style="margin-top:5px;"></view>
 
+  <picker mode='date' value='{{startTime}}' bindchange='bindDateChange'>
   <view class="info-wrap">
-    <text class="label">开始时间:</text>
-    <input class="form-account" type="date" placeholder='请输入开始时间（2019.05.27）' value="{{startTime}}" bindblur='userStartTimeInput' />
+    <text class="label">开始:</text>
+    <input class="form-account" type="date" value='{{startTime}}' style='padding-left:6%' disabled='false'></input>
   </view>
+  </picker>
+  <picker mode='time' value='{{startTimeDetail}}' bindchange='userStartTimeInputDetail'>
+  <view class="info-wrap">
+    <text class="label">时间:</text>
+    <input class="form-account" type="date" value='{{startTimeDetail}}' style='padding-left:6%' disabled='false'></input>
+  </view>
+  </picker>
+
+
   <view class="hr" style="margin-top:5px;"></view>
 
+  <picker mode='date' value='{{endTime}}' bindchange='userEndTimeInput'>
   <view class="info-wrap">
-    <text class="label">结束时间:</text>
-    <input class="form-account" type="date" placeholder='请输入结束时间（2019.05.27）' value="{{endTime}}" bindblur='userEndTimeInput' />
+    <text class="label">结束:</text>
+    <input class="form-account" type="date" value='{{endTime}}' style='padding-left:6%' disabled='false'></input>
   </view>
+  </picker>
+  <picker mode='time' value='{{endTimeDetail}}' bindchange='userEndTimeInputDetail'>
+  <view class="info-wrap">
+    <text class="label">时间:</text>
+    <input class="form-account" type="date" value='{{endTimeDetail}}' style='padding-left:6%' disabled='false'></input>
+  </view>
+  </picker>
+
+
   <view class="hr" style="margin-top:5px;"></view>
   
   <view class="info-wrap">
